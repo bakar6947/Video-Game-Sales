@@ -3,7 +3,9 @@ import sys
 from src.logger import logging
 
 
-def get_error_detail(message, details:sys):
+def get_error_detail(message, details=None):
+    if details is None:
+        return f"Error occured: [{message}]"
     
     _, _, exc_tb = details.exc_info()
     
@@ -20,7 +22,7 @@ def get_error_detail(message, details:sys):
 
 class CustomException(Exception):
     
-    def __init__(self, error_message, error_detial:sys):
+    def __init__(self, error_message, error_detial=None):
         super().__init__(error_message)
         
         self.error_message = get_error_detail(error_message, error_detial)
@@ -29,9 +31,9 @@ class CustomException(Exception):
         return self.error_message
     
 
-# # Test Logging and Exception  
+# Test Logging and Exception  
 # try:
 #     c = 1/0
 # except Exception as e:
-#     logging.info('test logging and exception')
+#     # logging.info('test logging and exception')
 #     raise CustomException(e, sys)

@@ -57,12 +57,15 @@ class ModelTrainer:
             
             r2_result = evaluate_model(models, X_train, y_train, X_test, y_test)
             
-            
             sorted_r2_score = sorted(r2_result, key=lambda x: x['Test'])
             
             best_model_name = sorted_r2_score[7]['Model']
             best_model_result = sorted_r2_score[7]['Test']
             best_model = models[best_model_name]
+            
+            if best_model_result < 0.6:
+                logging.info('No best model found')
+                raise CustomException("No best model found")
        
             logging.info(f'Best model found as: {best_model_name} with R2-Score: {best_model_result}')
             
