@@ -29,6 +29,9 @@ class DataTransformation:
         '''
         Create Pipline and return the preprocessor object
         '''
+        logging.info('Build Pipeline')
+        
+        
         try:
             
             # Create Pipeline with Impute Missing values and Scalling
@@ -38,7 +41,6 @@ class DataTransformation:
                     ('scaler', StandardScaler())
                 ]
             )
-            logging.info('Pipeline Complete')
             
             return preprocessor_pipe            
         
@@ -91,7 +93,6 @@ class DataTransformation:
             test_arr = np.c_[test_input_arr, np.array(test_df_target)]
             
             logging.info('Transformation Complete')
-            
             
             # Save Preprocessor Pipeline Object in pkl file
             save_obj(
