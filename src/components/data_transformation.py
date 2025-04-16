@@ -71,13 +71,12 @@ class DataTransformation:
                 
             # Seperate Input and Target Feature of both data frames
             target_feature = 'Global_Sales'
-            un_required_feature = 'Name'
-            
+            un_required_feature = ['Rank' ,'Name']
         
-            train_df_input = train_df.drop(columns=[target_feature, un_required_feature])
+            train_df_input = train_df.drop(columns=un_required_feature + [target_feature] )
             train_df_target = train_df[target_feature]
             
-            test_df_input = test_df.drop(columns=[target_feature, un_required_feature])
+            test_df_input = test_df.drop(columns=un_required_feature + [target_feature])
             test_df_target = test_df[target_feature]
 
             

@@ -59,6 +59,7 @@ class ModelTrainer:
             
             sorted_r2_score = sorted(r2_result, key=lambda x: x['Test'])
             
+            
             best_model_name = sorted_r2_score[7]['Model']
             best_model_result = sorted_r2_score[7]['Test']
             best_model = models[best_model_name]
