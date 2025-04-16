@@ -20,6 +20,7 @@ from xgboost import XGBRegressor
 @dataclass
 class ModelTrainerConfig:
     model_trainer_file = os.path.join('artifact', 'model_trainer.pkl')
+    logging.info('Model Trainer PKL File Created')
     
     
 
@@ -30,10 +31,9 @@ class ModelTrainer:
         
     
     def initiate_model_trainer(self, train_data, test_data):
-        logging.info('Initiate Model Trainer')
+        logging.info('Start Model Training')
         
         try:
-            
             X_train, y_train, X_test, y_test = (
                 train_data[:, :-1],
                 train_data[:, -1],
@@ -59,7 +59,6 @@ class ModelTrainer:
             
             sorted_r2_score = sorted(r2_result, key=lambda x: x['Test'])
             
-            
             best_model_name = sorted_r2_score[7]['Model']
             best_model_result = sorted_r2_score[7]['Test']
             best_model = models[best_model_name]
@@ -68,17 +67,17 @@ class ModelTrainer:
                 logging.info('No best model found')
                 raise CustomException("No best model found")
        
-            logging.info(f'Best model found as: {best_model_name} with R2-Score: {best_model_result}')
+            logging.info(f'Best model found as: {best_model_name} with R2-Score: [{best_model_result}]')
             
             save_obj(
-                file_path= self.trainer_config.model_trainer_file,
-                obj=best_model
+                obj=best_model,
+                file_path= self.trainer_config.model_trainer_file
             )
-            
             
             y_pred = best_model.predict(X_test)
             r2 = r2_score(y_test, y_pred)
             
+            logging.info('Model Traing Complete')
             return(
                 best_model_name,
                 r2
