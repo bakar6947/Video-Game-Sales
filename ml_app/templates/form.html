@@ -1,0 +1,208 @@
+{% extends "base.html" %} {% block content %}
+
+<form class="max-w-md mx-auto mt-4">
+  <div class="relative z-0 w-full mb-5 group">
+    <input
+      type="text"
+      name="game_name"
+      id="game_name"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+      placeholder=" "
+      required
+    />
+    <label
+      for="game_name"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Name of Game</label
+    >
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <select
+      id="countries"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+    >
+      <option selected disabled>Select Platform</option>
+      <option value="0">Atari 2600</option>
+      <option value="1">Nintendo 3DS</option>
+      <option value="2">Nintendo DS</option>
+      <option value="3">Game Boy Advance</option>
+      <option value="4">Nintendo GameCube</option>
+      <option value="5">Nintendo 64</option>
+      <option value="7">Personal Computer</option>
+      <option value="8">Play Station</option>
+      <option value="9">Play Station 2</option>
+      <option value="10">Play Station 3</option>
+      <option value="11">Play Station 4</option>
+      <option value="12">Play Station Portable</option>
+      <option value="13">PlayStation Vita</option>
+      <option value="14">Sega Saturn</option>
+      <option value="15">Super Nintendo Entertainment System</option>
+      <option value="16">Nintendo Wii</option>
+      <option value="17">Nintendo Wii U</option>
+      <option value="18">Xbox 360</option>
+      <option value="19">Xbox</option>
+      <option value="20">Xbox One</option>
+      <option value="6">Other Platform</option>
+    </select>
+    <label
+      for="platform"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Releasing Platform</label
+    >
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <select
+      id="countries"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+    >
+      <option selected disabled>Select Game Type</option>
+      <option value="0">Action</option>
+      <option value="1">Adventure</option>
+      <option value="2">Fighting</option>
+      <option value="3">Misc</option>
+      <option value="4">Platform</option>
+      <option value="5">Puzzle</option>
+      <option value="6">Racing</option>
+      <option value="7">Role-Playing</option>
+      <option value="8">Shooter</option>
+      <option value="9">Simulation</option>
+      <option value="10">Sports</option>
+      <option value="11">Strategy</option>
+    </select>
+    <label
+      for="platform"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Type of Game</label
+    >
+  </div>
+
+  <div class="relative z-0 w-full mb-5 group">
+    <select
+      id="countries"
+      class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+    >
+      <option selected disabled>Select Publisher</option>
+      <option value="0">505 Games</option>
+      <option value="1">Activision</option>
+      <option value="2">Atari</option>
+      <option value="3">Capcom</option>
+      <option value="4">Disney Interactive Studios</option>
+      <option value="5">Eidos Interactive</option>
+      <option value="6">Electronic Arts</option>
+      <option value="7">Konami Digital Entertainment</option>
+      <option value="8">Midway Games</option>
+      <option value="9">Namco Bandai Games</option>
+      <option value="10">Nintendo</option>
+      <option value="12">Sega</option>
+      <option value="13">Sony Computer Entertainment</option>
+      <option value="14">Square Enix</option>
+      <option value="15">THQ</option>
+      <option value="16">Take-Two Interactive</option>
+      <option value="17">Tecmo Koei</option>
+      <option value="18">Ubisoft</option>
+      <option value="19">Unknown</option>
+      <option value="20">Warner Bros. Interactive Entertainment</option>
+      <option value="11">Other Publisher</option>
+    </select>
+    <label
+      for="platform"
+      class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 rtl:peer-focus:left-auto peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+      >Game Publisher</label
+    >
+  </div>
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="number"
+        name="floating_first_name"
+        id="floating_first_name"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="floating_first_name"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >North America Sales(In Million)</label
+      >
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="number"
+        name="floating_last_name"
+        id="floating_last_name"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="floating_last_name"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Europe Sales(In Million)</label
+      >
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="number"
+        pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+        name="floating_phone"
+        id="floating_phone"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="floating_phone"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Japan Sales(In Million)</label
+      >
+    </div>
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="number"
+        name="floating_company"
+        id="floating_company"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="floating_company"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Sales in Other Regions (In Million)</label
+      >
+    </div>
+  </div>
+
+  <div class="grid md:grid-cols-2 md:gap-6">
+    <div class="relative z-0 w-full mb-5 group">
+      <input
+        type="number"
+        name="floating_last_name"
+        id="floating_last_name"
+        class="block py-2.5 px-0 w-full text-sm text-gray-900 bg-transparent border-0 border-b-2 border-gray-300 appearance-none dark:text-white dark:border-gray-600 dark:focus:border-blue-500 focus:outline-none focus:ring-0 focus:border-blue-600 peer"
+        placeholder=" "
+        required
+      />
+      <label
+        for="floating_last_name"
+        class="peer-focus:font-medium absolute text-sm text-gray-500 dark:text-gray-400 duration-300 transform -translate-y-6 scale-75 top-3 -z-10 origin-[0] peer-focus:start-0 rtl:peer-focus:translate-x-1/4 peer-focus:text-blue-600 peer-focus:dark:text-blue-500 peer-placeholder-shown:scale-100 peer-placeholder-shown:translate-y-0 peer-focus:scale-75 peer-focus:-translate-y-6"
+        >Releasing Year</label
+      >
+    </div>
+  </div>
+
+  <button
+    type="submit"
+    class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+  >
+    Predict
+  </button>
+</form>
+{% endblock %}
