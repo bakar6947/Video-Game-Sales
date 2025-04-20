@@ -17,7 +17,16 @@ class PredictPipeline:
     def load_models(self):
         
         try:
-            transformer_path = os.path.join('..', 'artifact', 'preprocessor.pkl')
+            
+            '''
+            For run test.py file, Use these paths, else face error
+            
+            transformer_path = os.path.join('artifact', 'transformer.pkl')
+            model_path = os.path.join('artifact', 'model_trainer.pkl')
+            '''
+            
+            # These paths just for app.views.py
+            transformer_path = os.path.join('..', 'artifact', 'transformer.pkl')
             model_path = os.path.join('..', 'artifact', 'model_trainer.pkl')
             
             # Load Processor and Model
@@ -33,11 +42,14 @@ class PredictPipeline:
         
     def predict(self, user_data):
         logging.info('Make Prediction')
-    
+        
         try:
             transformer, model = self.load_models()
-
-            return transformer, model
+            
+            transformed_data = transformer.transform(user_data)
+            prediction = model.predict(transformed_data)
+            
+            return prediction
             
         except Exception as e:
             raise CustomException(e, sys)
